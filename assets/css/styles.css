@@ -1,0 +1,60 @@
+:root {
+	--primary: #08203e;
+	--seconday: #557c93;
+}
+
+html,
+body {
+	font-size: 16px;
+	color: #ffff;
+	background-color: var(--primary);
+}
+
+a {
+	color: #ffff;
+	text-decoration: none;
+}
+
+.nav-links {
+	display: inline;
+	border-right: 1px #ffff solid;
+}
+
+.nav-links a {
+	margin: 0 16px;
+	border-radius: 2px;
+	padding: 4px 8px;
+}
+.nav-links a:hover {
+	background-color: var(--seconday);
+}
+
+.nav-icons {
+	display: inline;
+}
+
+.nav-icons a {
+	margin: 0 16px;
+	font-size: 20px;
+}
+
+.nav-icons a:hover {
+	color: var(--seconday);
+}
+
+section {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.section-1 {
+	height: 90vh;
+}
+
+.intro-description {
+	padding-top: 1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+}
