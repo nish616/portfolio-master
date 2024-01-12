@@ -1,19 +1,35 @@
 :root {
 	--primary: #08203e;
 	--seconday: #557c93;
+	--text-color: #ffff;
 }
 
 html,
 body {
 	font-size: 16px;
-	color: #ffff;
+	color: var(--text-color);
 	background-color: var(--primary);
 }
 
+body * {
+	z-index: 20;
+}
+
+/* * {
+	border: #000 1px solid;
+} */
+
 a {
-	color: #ffff;
+	color: var(--text-color);
 	text-decoration: none;
 }
+
+section {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+/* Nav Bar */
 
 .nav-links {
 	display: inline;
@@ -42,16 +58,27 @@ a {
 	color: var(--seconday);
 }
 
-section {
-	padding-top: 3rem;
-	padding-bottom: 3rem;
+/* Hero Section */
+
+#torch {
+	width: 250px;
+	height: 250px;
+	background: radial-gradient(circle, #1a2e4f -52%, transparent 68%, var(--primary) 15%);
+	position: absolute;
+	border-radius: 50%;
+	z-index: 10;
 }
 
 .section-1 {
 	height: 90vh;
+	display: flex;
+	align-items: center;
+	position: relative;
 }
 
-.intro-description {
+
+p.intro {
+	width: 50%;
 	padding-top: 1rem;
 }
 
