@@ -1,7 +1,7 @@
 :root {
-	--primary: #08203e;
-	--seconday: #557c93;
-	--text-color: #ffff;
+	--primary: #ffff;
+	--seconday: #000;
+	--text-color: #000;
 }
 
 html,
@@ -9,13 +9,15 @@ body {
 	font-size: 16px;
 	color: var(--text-color);
 	background-color: var(--primary);
+	padding-left: 5rem;
+	padding-right: 5rem;
 }
 
-body * {
+/* body * {
 	z-index: 20;
 }
 
-/* * {
+* {
 	border: #000 1px solid;
 } */
 
@@ -29,6 +31,10 @@ section {
 	padding-bottom: 3rem;
 }
 
+section .title {
+	padding-bottom: 1rem;
+}
+
 /* Nav Bar */
 
 .nav-links {
@@ -40,9 +46,26 @@ section {
 	margin: 0 16px;
 	border-radius: 2px;
 	padding: 4px 8px;
+	border-bottom: #000 1px;
+	position: relative;
 }
-.nav-links a:hover {
+
+.nav-links a::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
 	background-color: var(--seconday);
+	transform: scaleX(0);
+	transform-origin: bottom right;
+	transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover::before {
+	transform: scaleX(1);
+	transform-origin: bottom left;
 }
 
 .nav-icons {
@@ -54,20 +77,11 @@ section {
 	font-size: 20px;
 }
 
-.nav-icons a:hover {
+/* .nav-icons a:hover {
 	color: var(--seconday);
-}
+} */
 
 /* Hero Section */
-
-#torch {
-	width: 250px;
-	height: 250px;
-	background: radial-gradient(circle, #1a2e4f -52%, transparent 68%, var(--primary) 15%);
-	position: absolute;
-	border-radius: 50%;
-	z-index: 10;
-}
 
 .section-1 {
 	height: 90vh;
@@ -82,6 +96,89 @@ p.intro {
 	padding-top: 1rem;
 }
 
-
-@media screen and (max-width: 768px) {
+.section .title {
+	position: relative
 }
+
+.section .title h2::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: var(--seconday);
+	transform: scaleX(0);
+	transform-origin: bottom right;
+	transition: transform 1.3s ease-in-out;
+}
+
+.section .title h2.section-visible::before {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+.section .content {
+	padding: 2rem 0;
+}
+
+.section-2 {
+	min-height: 40vh;
+	position: relative;
+}
+
+#projects .project-item {
+	border: 1px solid var(--seconday);
+	width: 33.33%;
+	padding: 2rem 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#projects .project-item a {
+	border: 1px solid var(--seconday);
+	padding: 4px 18px;
+	float: right;
+	box-shadow: var(--seconday) 2px 3px 0 0;
+	transition: box-shadow ease-in 200ms;
+}
+
+#projects .project-item a:hover {
+	cursor: pointer;
+	box-shadow: var(--seconday) 0px 0px 0 0;
+}
+
+.section-3 {
+	min-height: 40vh;
+	position: relative;
+}
+
+.section-3 .content {
+	display: flex;
+}
+
+.section-3 .content div {
+	width: 50%;
+	animation: fadeIn 5s;
+	-webkit-animation: fadeIn 5s;
+	-moz-animation: fadeIn 5s;
+	-o-animation: fadeIn 5s;
+	-ms-animation: fadeIn 5s;
+}
+
+.section-3 .description * {
+	display: inline;
+	font-size: 18px;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 768px) {}
